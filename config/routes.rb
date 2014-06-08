@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :products
+  devise_for :users
+  resources :projects
   root 'welcome#index'
   get "about" => "welcome#about"
 end
