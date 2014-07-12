@@ -52,7 +52,7 @@
 .bs-callout .highlight {
   background-color: #fff;
 }
- 
+
 /* Themes for different contexts */
 .bs-callout-danger {
   background-color: #fcf2f2;
@@ -76,5 +76,9 @@
    border: 3px solid #ff6600;
    border-radius: 50px;
    -webkit-border-radius: 50px;
-   -moz-border-radius: 50px;   
+   -moz-border-radius: 50px;
+}
+
+.navbar-brand {
+  color: #ff6600;
 }
