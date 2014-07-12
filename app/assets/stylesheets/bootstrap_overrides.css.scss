@@ -40,6 +40,7 @@
   padding: 15px 30px 15px 15px;
   border: 1px solid #eee;
   border-left-width: 5px;
+  border-radius: 3px;
 }
 .bs-callout h4 {
   margin-top: 0;
@@ -64,4 +65,16 @@
 .bs-callout-info {
   background-color: #ffffff;
   border-left-color: #ff6600;
+}
+
+.img-circular{
+   width: 100px;
+   height: 100px;
+   background-image: url('https://scontent-b-sin.xx.fbcdn.net/hphotos-xfp1/t1.0-9/1966773_782351645109130_287268847_n.jpg');
+   background-size: cover;
+   display: block;
+   border: 3px solid #ff6600;
+   border-radius: 50px;
+   -webkit-border-radius: 50px;
+   -moz-border-radius: 50px;   
 }
