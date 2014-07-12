@@ -1,43 +1,24 @@
-<div id="page-content-wrapper">
-  <div class="content-header">
-  <h1>
-    <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-    My Projects
-  </h1>
-</div>
-<!-- Keep all page content within the page-content inset div! -->
-<div class="page-content inset">
-  <div class="row">
-	<div class="col-md-12">
+<div class="row">
+	<div class="col-md-10">
 	  <p class="lead">This is the list of all your projects.</p>
 	</div>
-	<div class="col-md-6">
-	  <div class="bs-callout bs-callout-info">
-        <h4>Project 1</h4>
-        <p>This is my first project.</p>
-      </div>
-	</div>
-
-	<div class="col-md-6">
-	  <div class="bs-callout bs-callout-info">
-        <h4>Project 1</h4>
-        <p>This is my first project.</p>
-      </div>
-	</div>
-
-	<div class="col-md-6">
-	  <div class="bs-callout bs-callout-info">
-        <h4>Project 1</h4>
-        <p>This is my first project.</p>
-      </div>
-	</div>
-
-	<div class="col-md-6">
-	  <div class="bs-callout bs-callout-info">
-        <h4>Project 1</h4>
-        <p>This is my first project.</p>
-      </div>
-	</div>
+  <div class="col-md-2">
+		<%= link_to content_tag(:i, ' New Project', class: "fa fa-plus"), "#",
+		            class: "btn btn-primary",
+								data:{
+									toggle:"modal",
+									target:"#project-modal",
+									remote: "#{new_project_path} #project-form"
+								} %>
   </div>
-</div>
+  <% @projects.each do |project|%>
+	  <%= render partial: "project_row", locals: {project: project} %>
+  <% end %>
 
+	<div class="modal fade" id="project-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			</div>
+		</div>
+	</div>
+</div>

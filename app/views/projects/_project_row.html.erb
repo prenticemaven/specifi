@@ -1,0 +1,28 @@
+<div class="col-md-6">
+  <div class="bs-callout bs-callout-info">
+    <div class="row">
+      <div class="col-xs-10">
+        <h4><%= project.name %></h4>
+        <p><%= project.contact_person %></p>
+        <p><%= project.contact_number %></p>
+        <p><%= project.address %></p>
+      </div>
+      <div class="col-xs-2">
+        <%= link_to content_tag(:i, '', class: "fa fa-edit"), "#",
+                    data:{
+                      toggle:"modal",
+                      target:"#project-modal-#{project.id}",
+                      remote: "#{edit_project_path(project)} #project-form"
+                    } %>
+        <%= fa_icon "trash-o 2x" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="<%= "project-modal-#{project.id}" %>" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>

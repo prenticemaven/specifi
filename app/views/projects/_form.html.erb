@@ -1,0 +1,53 @@
+<div id="project-form">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="">Project</h4>
+  </div>
+
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for(@project) do |f| %>
+    <div class="modal-body">
+      <% if @project.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+          <ul>
+          <% @project.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div><%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true %></div>
+
+      <div><%= f.label :description %><br />
+      <%= f.text_field :description %></div>
+
+      <div><%= f.label :contact_person %><br />
+      <%= f.text_field :contact_person %></div>
+
+      <div><%= f.label :contact_number %><br />
+      <%= f.text_field :contact_number %></div>
+
+      <div><%= f.label :address %><br />
+      <%= f.text_field :address %></div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
