@@ -16,7 +16,10 @@
     </div>
   <% end %>
 
-  <%= form_for(@project) do |f| %>
+  <% modal ||= false %>
+  <% remote = modal ? true : false %>
+
+  <%= form_for(@project, remote: remote, html: {class: "project-form", role: :form, 'data-model' => 'project'}) do |f| %>
     <div class="modal-body">
       <% if @project.errors.any? %>
         <div id="error_explanation">
@@ -29,21 +32,26 @@
           </ul>
         </div>
       <% end %>
-
-      <div><%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true %></div>
-
-      <div><%= f.label :description %><br />
-      <%= f.text_field :description %></div>
-
-      <div><%= f.label :contact_person %><br />
-      <%= f.text_field :contact_person %></div>
-
-      <div><%= f.label :contact_number %><br />
-      <%= f.text_field :contact_number %></div>
-
-      <div><%= f.label :address %><br />
-      <%= f.text_field :address %></div>
+      <div class="form-group">
+        <%= f.label :name, class: 'control-label' %><br>
+        <%= f.text_field :name, class: 'form-control' %>
+        <span class="help-block"></span>
+      </div>
+      <div class="form-group">
+        <%= f.label :contact_person, class: 'control-label' %><br>
+        <%= f.text_field :contact_person, class: 'form-control' %>
+        <span class="help-block"></span>
+      </div>
+      <div class="form-group">
+        <%= f.label :contact_number, class: 'control-label' %><br>
+        <%= f.text_field :contact_number, class: 'form-control' %>
+        <span class="help-block"></span>
+      </div>
+      <div class="form-group">
+        <%= f.label :address, class: 'control-label' %><br>
+        <%= f.text_field :address, class: 'form-control' %>
+        <span class="help-block"></span>
+      </div>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

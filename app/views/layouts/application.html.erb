@@ -50,6 +50,10 @@
         e.preventDefault();
         $("#wrapper").toggleClass("active");
     });
+
+    $('body').on('hidden.bs.modal', '.modal', function () {
+      $(this).removeData('bs.modal');
+    });
     </script>
 </body>
 </html>

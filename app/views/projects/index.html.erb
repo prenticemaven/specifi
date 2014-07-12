@@ -11,9 +11,13 @@
 									remote: "#{new_project_path} #project-form"
 								} %>
   </div>
-  <% @projects.each do |project|%>
-	  <%= render partial: "project_row", locals: {project: project} %>
-  <% end %>
+	<div id="project-list">
+		<% @projects.each do |project|%>
+			<div id="<%= "project-#{project.id}" %>">
+				<%= render partial: "project_row", locals: {project: project} %>
+			</div>
+		<% end %>
+	</div>
 
 	<div class="modal fade" id="project-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
 		<div class="modal-dialog">
