@@ -41,6 +41,10 @@
   border: 1px solid #eee;
   border-left-width: 5px;
   border-radius: 3px;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 .bs-callout h4 {
   margin-top: 0;
@@ -51,6 +55,9 @@
 .bs-callout code,
 .bs-callout .highlight {
   background-color: #fff;
+}
+#project-list .bs-callout:hover {
+  border-color: #ff6600;
 }
 
 /* Themes for different contexts */

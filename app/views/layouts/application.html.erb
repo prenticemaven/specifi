@@ -20,11 +20,11 @@
           </div>
           <br>
         </li>
-        <li><%= link_to content_tag(:i, ' Dashboard', class: "fa fa-dashboard"), projects_path %></li>
-        <li><%= link_to content_tag(:i, ' Projects', class: "fa fa-bars"), projects_path %></li>
-        <li><%= link_to content_tag(:i, ' Materials', class: "fa fa-archive"), projects_path %></li>
-        <li><%= link_to content_tag(:i, ' Profile', class: "fa fa-user"), projects_path %></li>
-        <li><%= link_to content_tag(:i, ' Settings', class: "fa fa-cog"), projects_path %></li>
+        <li><%= link_to content_tag(:i, ' Dashboard', class: "fa fa-dashboard"), authenticated_root_path, class: is_active?("dashboard") %></li>
+        <li><%= link_to content_tag(:i, ' Projects', class: "fa fa-bars"), projects_path, class: is_active?("projects") %></li>
+        <li><%= link_to content_tag(:i, ' Materials', class: "fa fa-archive"), materials_path, class: is_active?("materials") %></li>
+        <li><%= link_to content_tag(:i, ' Profile', class: "fa fa-user"), profile_path, class: is_active?("profile") %></li>
+        <li><%= link_to content_tag(:i, ' Settings', class: "fa fa-cog"), settings_path, class: is_active?("settings") %></li>
         <li><%= link_to content_tag(:i, ' Logout', class: "fa fa-sign-out"), destroy_user_session_path, method: :delete %></li>
 
       </ul>
@@ -34,8 +34,8 @@
     <div id="page-content-wrapper">
       <div class="content-header">
       <h1>
-        <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-        My Projects
+        <a id="menu-toggle" href="#" class="btn btn-default"><%= fa_icon "navicon" %></a>
+        <%= yield(:title) %>
       </h1>
     </div>
     <!-- Keep all page content within the page-content inset div! -->
