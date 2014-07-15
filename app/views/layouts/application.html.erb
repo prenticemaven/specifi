@@ -13,13 +13,8 @@
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
-        <li class="sidebar-brand"><a href="#">SPECIFI</a></li>
-        <li>
-          <div class="row">
-            <div class="img-circular col-xs-6 col-xs-offset-4"></div>
-          </div>
-          <br>
-        </li>
+        <li><a href="#" class="text-center"><%= image_tag "logo.svg"%></a></li>
+        <li></br></li>
         <li><%= link_to content_tag(:i, ' Dashboard', class: "fa fa-dashboard"), authenticated_root_path, class: is_active?("dashboard") %></li>
         <li><%= link_to content_tag(:i, ' Projects', class: "fa fa-bars"), projects_path, class: is_active?("projects") %></li>
         <li><%= link_to content_tag(:i, ' Materials', class: "fa fa-archive"), materials_path, class: is_active?("materials") %></li>
