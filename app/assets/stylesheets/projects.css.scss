@@ -1,3 +1,20 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.project-list-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  a {
+    color: #999999;
+    text-decoration: none;
+  }
+  .actions {
+    text-align: center;
+  }
+}
+
+.table-header {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  color: #999999;
+}

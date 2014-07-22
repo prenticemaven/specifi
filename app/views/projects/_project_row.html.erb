@@ -1,24 +1,42 @@
-<div class="col-md-6">
-  <div class="bs-callout bs-callout-info">
-    <div class="row">
-      <a href="<%= project_path(project) %>" class="col-xs-10">
-        <h4><%= project.name %></h4>
-        <p><%= project.contact_person %></p>
-        <p><%= project.contact_number %></p>
-        <p><%= project.address %></p>
-      </a>
-      <div class="col-xs-2">
-        <%= link_to content_tag(:i, '', class: "fa fa-edit"), "#",
-                    data:{
-                      toggle:"modal",
-                      target:"#project-modal",
-                      remote: "#{edit_project_path(project)} #project-form"
-                    } %>
+<a href="<%= project_path(project) %>" class="col-xs-8">
+  <div class="row visible-sm-block visible-xs-block">
+    <div class="col-xs-12">
+      <address>
+        <strong><%= project.name %></strong><br>
+        <i class="fa fa-user"> <%= project.contact_person %></i><br>
+        <i class="fa fa-phone"> <%= project.contact_number %></i><br>
+      </address>
+      <small><em>Last updated: <%= time_ago_in_words(project.updated_at) %> ago</em></small>
+    </div>
+  </div>
 
-        <%= link_to content_tag(:i, '', class: "fa fa-trash-o"), project,
-                    data: {remote: true, confirm: "Are you sure you want to delete '#{project.name}'?"},
-                    method: :delete %>
+  <div class="row visible-md-block visible-lg-block">
+      <div class="col-md-4">
+        <%= project.name %>
       </div>
+      <div class="col-md-4">
+        <%= project.contact_person %>
+      </div>
+      <div class="col-md-4">
+        <%= project.contact_number %>
+      </div>
+  </div>
+</a>
+<div class="col-xs-4 actions">
+  <div class="row">
+    <div class="col-md-6 col-xs-6">
+      <%= link_to content_tag(:i, '', class: "fa fa-edit"), "#",
+                  data:{
+                    toggle:"modal",
+                    target:"#project-modal",
+                    remote: "#{edit_project_path(project)} #project-form"
+                  } %>
+    </div>
+    <div class="col-md-6 col-xs-6">
+      <%= link_to content_tag(:i, '', class: "fa fa-trash-o"), project,
+                  data: {remote: true, confirm: "Are you sure you want to delete '#{project.name}'?"},
+                  method: :delete %>
+
     </div>
   </div>
 </div>
