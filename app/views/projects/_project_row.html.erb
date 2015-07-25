@@ -1,14 +1,29 @@
 <a href="<%= project_path(project) %>" class="col-xs-8">
   <div class="row visible-sm-block visible-xs-block">
-    <div class="col-xs-12">
-      <address>
-        <strong><%= project.name %></strong><br>
-        <i class="fa fa-user"> <%= project.contact_person %></i><br>
-        <i class="fa fa-phone"> <%= project.contact_number %></i><br>
-      </address>
-      <small><em>Last updated: <%= time_ago_in_words(project.updated_at) %> ago</em></small>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-slide-active">
+          <div class="title">
+            <div class="col-xs-12">
+              <address>
+                <strong><%= project.name %></strong><br>
+                <i class="fa fa-user"> <%= project.contact_person %></i><br>
+                <i class="fa fa-phone"> <%= project.contact_number %></i><br>
+              </address>
+              <small><em>Last updated: <%= time_ago_in_words(project.updated_at) %> ago</em></small>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="title">Slide 6</div>
+        </div>
+      </div>
     </div>
   </div>
+
+
+
 
   <div class="row visible-md-block visible-lg-block">
       <div class="col-md-4">
@@ -22,7 +37,7 @@
       </div>
   </div>
 </a>
-<div class="col-xs-4 actions">
+<div class="col-xs-4 actions row visible-md-block visible-lg-block">
   <div class="row">
     <div class="col-md-6 col-xs-6">
       <%= link_to content_tag(:i, '', class: "fa fa-edit"), "#",

@@ -40,8 +40,17 @@
     </div>
   </div>
 
-    <!-- Custom JavaScript for the Menu Toggle -->
-    <script>
+  <!-- Custom JavaScript for the Menu Toggle -->
+  <script>
+
+    window.onload = function() {
+
+  var mySwiper = new Swiper('.swiper-container',{
+    slidesPerView: 'auto'
+  })
+
+    }
+
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("active");
@@ -53,6 +62,6 @@
     $('body').on('hidden.bs.modal', '#confirm-delete', function () {
       $(this).remove();
     });
-    </script>
+  </script>
 </body>
 </html>
